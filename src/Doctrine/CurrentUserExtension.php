@@ -10,6 +10,7 @@ use Symfony\Component\Security\Core\Security;
 use App\Entity\Customer;
 use App\Entity\Invoice;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
+use App\Entity\User;
 
 class CurrentUserExtension implements QueryCollectionExtensionInterface, QueryItemExtensionInterface
 {
@@ -28,7 +29,13 @@ class CurrentUserExtension implements QueryCollectionExtensionInterface, QueryIt
         $user = $this->security->getUser();
 
         // 2. Si on demande des invoices ou des customers alors, agir sur la requête pour qu'elle tienne compte de l'utilisateur connecté
-        if (($resourceClass === Customer::class || $resourceClass === Invoice::class) && !$this->auth->isGranted('ROLE_ADMIN')) {
+        if (
+            ($resourceClass === Customer::class || $resourceClass === Invoice::class)
+            &&
+            !$this->auth->isGranted('ROLE_ADMIN')
+            &&
+            $user instanceof User
+        ) {
             $rootAlias = $queryBuilder->getRootAliases()[0];
 
             if ($resourceClass === Customer::class) {
