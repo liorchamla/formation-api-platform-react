@@ -13,6 +13,8 @@ import AuthAPI from "./services/authAPI";
 import CustomerPage from "./pages/CustomerPage";
 import InvoicePage from "./pages/InvoicePage";
 import RegisterPage from "./pages/RegisterPage";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // On apporte le CSS personnalisé
 require("../css/app.css");
@@ -48,6 +50,7 @@ const App = () => {
           </Switch>
         </main>
       </HashRouter>
+      <ToastContainer position={toast.POSITION.BOTTOM_LEFT} />
     </AuthContext.Provider>
   );
 };
