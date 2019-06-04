@@ -69,12 +69,10 @@
       "doctrine:migrations:migrate": "symfony-cmd"
     },
     "post-install-cmd": [
-      "@auto-scripts",
-      "npm run build"
+      "@auto-scripts"
     ],
     "post-update-cmd": [
-      "@auto-scripts",
-      "npm run build"
+      "@auto-scripts"
     ]
   },
   "conflict": {
