@@ -27,7 +27,9 @@
     "symfony/validator": "4.2.*",
     "symfony/web-link": "4.2.*",
     "symfony/webpack-encore-bundle": "^1.6",
-    "symfony/yaml": "4.2.*",
+    "symfony/yaml": "4.2.*"
+  },
+  "require-dev": {
     "doctrine/doctrine-fixtures-bundle": "^3.1",
     "fzaninotto/faker": "^1.8",
     "symfony/debug-pack": "*",
@@ -36,7 +38,6 @@
     "symfony/test-pack": "*",
     "symfony/web-server-bundle": "4.2.*"
   },
-  "require-dev": {},
   "config": {
     "preferred-install": {
       "*": "dist"
