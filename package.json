@@ -18,7 +18,7 @@
     "dotenv": "^8.0.0",
     "fs": "0.0.1-security",
     "jwt-decode": "^2.2.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "react": "^16.8.6",
     "react-content-loader": "^4.2.1",
     "react-dom": "^16.8.6",
